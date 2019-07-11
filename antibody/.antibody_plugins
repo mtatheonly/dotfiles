@@ -6,7 +6,6 @@ robbyrussell/oh-my-zsh path:plugins/cargo kind:fpath
 robbyrussell/oh-my-zsh path:plugins/docker kind:fpath
 robbyrussell/oh-my-zsh path:plugins/docker-machine
 robbyrussell/oh-my-zsh path:plugins/command-not-found
-robbyrussell/oh-my-zsh path:plugins/brew
 zsh-users/zsh-syntax-highlighting
 mafredri/zsh-async
 sindresorhus/pure
