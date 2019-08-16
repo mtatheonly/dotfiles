@@ -1,7 +1,4 @@
 #!/usr/bin/zsh
 
-#autoload -Uz compinit && compinit
-#autoload -Uz bashcompinit && bashcompinit
-
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
+[ -f $HOME/.asdf/completions/asdf.bash ] && source $HOME/.asdf/completions/asdf.bash

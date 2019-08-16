@@ -1,4 +1,8 @@
 #!/usr/bin/env zsh
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+CMD=$(which rbenv)
+
+if [ "0" == "$?" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    which rbenv && eval "$(rbenv init -)"
+fi
