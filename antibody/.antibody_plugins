@@ -7,8 +7,8 @@ robbyrussell/oh-my-zsh path:plugins/cargo kind:fpath
 robbyrussell/oh-my-zsh path:plugins/docker kind:fpath
 robbyrussell/oh-my-zsh path:plugins/docker-machine
 robbyrussell/oh-my-zsh path:plugins/command-not-found
-zsh-users/zsh-syntax-highlighting
 mafredri/zsh-async
 sindresorhus/pure
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
