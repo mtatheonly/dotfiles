@@ -1,0 +1,1 @@
+../docker-cli/contrib/completion/fish/docker.fish
