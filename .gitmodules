@@ -1,3 +1,0 @@
-[submodule "docker-cli"]
-	path = fish/docker-cli
-	url = https://github.com/docker/cli
