@@ -1,6 +1,3 @@
-[submodule "fish-kubectl-completions"]
-	path = fish/fish-kubectl-completions
-	url = https://github.com/evanlucas/fish-kubectl-completions
 [submodule "docker-cli"]
 	path = fish/docker-cli
 	url = https://github.com/docker/cli
