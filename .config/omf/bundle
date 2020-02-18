@@ -1,5 +1,4 @@
 package bass
-package https://github.com/evanlucas/fish-kubectl-completions
 package sdk
 package tab
 theme default
