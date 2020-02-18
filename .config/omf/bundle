@@ -1,4 +1,5 @@
 package bass
+package https://github.com/brgmnn/fish-docker-compose
 package sdk
 package tab
 theme default
