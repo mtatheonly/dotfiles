@@ -1,2 +1,3 @@
 fish_variables
 **/completions/pratico.fish
+.config/fish/conf.d/local/**

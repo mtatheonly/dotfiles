@@ -4,3 +4,4 @@ if test $status -eq 0
         set -gx PATH $HOME/tools/productivity/fish/bin $PATH
     end
 end
+set -gx PATH $HOME/workspace/go/bin $PATH
