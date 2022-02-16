@@ -1,8 +1,5 @@
 #!/usr/bin/zsh
 
-#autoload -Uz compinit && compinit
-#autoload -Uz bashcompinit && bashcompinit
-
 function dockerbash {
     docker exec -it $1 /bin/bash
 }
@@ -31,16 +28,14 @@ function dockeruser {
 }
 
 __complete_docker_exec() {
-    docker ps | grep -v 'NAMES' | sed -r -e 's/.*  (.*)/\1/g'
+    containers="$(docker ps | grep -v 'NAMES' | sed -r -e 's/.*  (.*)/\1/g')"
+    _arguments "1: :($containers)"
 }
 
 __complete_docker_user_run() {
-    docker images | grep -v 'REPOSITORY' | grep -v '<none>' | awk '{print $1":"$2}'
+    images="$(docker images | grep -v 'REPOSITORY' | grep -v '<none>' | awk '{print $1":"$2}')"
+    _arguments "1: :($images)"
 }
 
-complete -F __complete_docker_exec dockersh
-complete -F __complete_docker_exec dockerbash
-complete -F __complete_docker_exec dockerlogs
-complete -F __complete_docker_exec dockerlogsf
-complete -F __complete_docker_exec -o filenames dockercp
-complete -F __complete_docker_user_run dockeruser
+compdef __complete_docker_exec dockersh dockerbash dockerlogs dockerlogsf
+compdef __complete_docker_user_run dockeruser

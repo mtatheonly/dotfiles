@@ -1,14 +1,12 @@
 robbyrussell/oh-my-zsh
 robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/go
 robbyrussell/oh-my-zsh path:plugins/tmuxinator
 robbyrussell/oh-my-zsh path:plugins/rust kind:fpath
-robbyrussell/oh-my-zsh path:plugins/cargo kind:fpath
+robbyrussell/oh-my-zsh path:plugins/cargo
 robbyrussell/oh-my-zsh path:plugins/docker kind:fpath
 robbyrussell/oh-my-zsh path:plugins/docker-machine
 robbyrussell/oh-my-zsh path:plugins/command-not-found
 mafredri/zsh-async
-sindresorhus/pure
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
