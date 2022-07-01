@@ -7,6 +7,9 @@
 # Zsh configuration
 # -----------------
 
+# Profiling startup time
+# zmodload zsh/zprof
+
 #
 # History
 #
@@ -37,6 +40,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 # Use degit instead of git as the default tool to install and update modules.
 #zstyle ':zim:zmodule' use 'degit'
 
+fpath=(~/.zsh_completions ~/.zsh_completions_local $fpath)
 # --------------------
 # Module configuration
 # --------------------
@@ -135,5 +139,10 @@ if [ -d $HOME/.zshrc.d ]; then
     . $i
   done
 fi
+
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
+# end Profiling startup time
+# zprof
 
 eval "$(starship init zsh)"
