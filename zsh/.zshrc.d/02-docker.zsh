@@ -28,7 +28,7 @@ function dockeruser {
 }
 
 __complete_docker_exec() {
-    containers="$(docker ps | grep -v 'NAMES' | sed -r -e 's/.*  (.*)/\1/g')"
+    containers="$(docker ps --format "{{.Names}}")"
     _arguments "1: :($containers)"
 }
 
