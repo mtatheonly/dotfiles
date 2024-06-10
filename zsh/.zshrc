@@ -146,3 +146,4 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 # zprof
 
 eval "$(starship init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"

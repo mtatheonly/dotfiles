@@ -40,6 +40,4 @@ zmodule zdharma-continuum/fast-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
-zmodule asdf
-zmodule exa
 zmodule fzf
