@@ -100,6 +100,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # ------------------
 # Initialize modules
 # ------------------
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
 
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   # Update static initialization script if it does not exist or it's outdated, before sourcing it
@@ -132,10 +136,10 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-autoload -Uz compinit && compinit
+#autoload -Uz compinit && compinit
 
 if [ -d $HOME/.zshrc.d ]; then
-  for i in `echo $HOME/.zshrc.d/*.zsh`; do    
+  for i in `find $HOME/.zshrc.d/ -type f -iname '*.zsh'`; do    
     . $i
   done
 fi
