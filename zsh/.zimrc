@@ -38,6 +38,7 @@ zmodule zdharma-continuum/fast-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
+zmodule ohmyzsh/ohmyzsh --root plugins/kubectl
 # }}} End configuration added by Zim install
 
 zmodule fzf
