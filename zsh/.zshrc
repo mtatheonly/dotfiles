@@ -157,6 +157,10 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 # zprof
 
 eval "$(atuin init zsh --disable-up-arrow)"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a1a1a1,bg=#4c566a,bold,underline"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+else
+  [[ ! -f ~/.p10k-portable.zsh ]] || source ~/.p10k-portable.zsh
+fi
