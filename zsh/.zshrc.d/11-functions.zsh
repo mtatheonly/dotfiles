@@ -29,3 +29,13 @@ function get_route {
   address="$1"
   ip route get $(getent hosts $address | awk '{print $1}')
 }
+
+function grep_exclude {
+  pattern="$1"
+  grep -RHn "${pattern}" 2>/dev/null | grep -v node_modules | grep -v target
+}
+
+function grep_exclude_i {
+  pattern="$1"
+  grep -RHin "${pattern}" 2>/dev/null | grep -v node_modules | grep -v target
+}

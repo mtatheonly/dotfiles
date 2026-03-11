@@ -4,3 +4,7 @@
 [ -z "$(echo $PATH | grep $HOME/.local/bin)" ] && [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
 [ -f /etc/profile.d/vte.sh ] && . /etc/profile.d/vte.sh
+
+if type "mise" > /dev/null; then
+  eval "$(mise activate zsh)"
+fi
