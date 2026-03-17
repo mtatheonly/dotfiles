@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -159,8 +152,32 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 eval "$(atuin init zsh --disable-up-arrow)"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a1a1a1,bg=#4c566a,bold,underline"
 
-if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
-  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then 
+	PROMPT_CHAR='❯'
 else
-  [[ ! -f ~/.p10k-portable.zsh ]] || source ~/.p10k-portable.zsh
+	PROMPT_CHAR='>'
 fi
+
+_prompt_asciiship_vimode() {
+  case ${KEYMAP} in
+    vicmd) print -n '%S%#%s' ;;
+    *) print -n "$PROMPT_CHAR" ;;
+  esac
+}
+
+zstyle ':zim:git-info' verbose yes
+zstyle ':zim:git-info:untracked' format '?'
+zstyle ':zim:git-info:keys' format \
+      'status' '%S%I%i%A%B%u' \
+      'prompt' ' on %%B%F{magenta}%b%c%s${git_info[status]:+" %F{red}[${(e)git_info[status]}]"}%f%%b'
+
+PS1='
+%(2L.%B%F{yellow}(%L)%f%b .)%(!.%B%F{red}%n%f%b in .${SSH_TTY:+"%B%F{yellow}%n%f%b in "})${SSH_TTY:+"%B%F{green}%m%f%b in "}%B%F{cyan}%~%f%b${(e)git_info[prompt]}${VIRTUAL_ENV:+" via %B%F{yellow}${VIRTUAL_ENV:t}%f%b"}${duration_info}
+%B%(1j.%F{blue}*%f .)%(?.%F{magenta}.%F{red})$(_prompt_asciiship_vimode)%f%b '
+
+#eval "$(oh-my-posh init zsh -c $HOME/.config/omp/zen.toml)"
+#if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+#	eval "$(oh-my-posh init zsh)"
+#else
+#  [[ ! -f ~/.p10k-portable.zsh ]] || source ~/.p10k-portable.zsh
+#fi
