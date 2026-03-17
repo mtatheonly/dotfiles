@@ -153,9 +153,9 @@ eval "$(atuin init zsh --disable-up-arrow)"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a1a1a1,bg=#4c566a,bold,underline"
 
 if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then 
-	PROMPT_CHAR='❯'
+	PROMPT_CHAR='%(!.#.❯)'
 else
-	PROMPT_CHAR='>'
+	PROMPT_CHAR='%(!.#.>)'
 fi
 
 _prompt_asciiship_vimode() {
