@@ -174,10 +174,3 @@ zstyle ':zim:git-info:keys' format \
 PS1='
 %(2L.%B%F{yellow}(%L)%f%b .)%(!.%B%F{red}%n%f%b in .${SSH_TTY:+"%B%F{yellow}%n%f%b in "})${SSH_TTY:+"%B%F{green}%m%f%b in "}%B%F{cyan}%~%f%b${(e)git_info[prompt]}${duration_info}
 ${VIRTUAL_ENV:+"(%B%F{yellow}${${(s:/:)VIRTUAL_ENV/.venv//}[-1]}%f%b) "}%B%(1j.%F{blue}*%f .)%(?.%F{magenta}.%F{red})$(_prompt_asciiship_vimode)%f%b '
-
-#eval "$(oh-my-posh init zsh -c $HOME/.config/omp/zen.toml)"
-#if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
-#	eval "$(oh-my-posh init zsh)"
-#else
-#  [[ ! -f ~/.p10k-portable.zsh ]] || source ~/.p10k-portable.zsh
-#fi
